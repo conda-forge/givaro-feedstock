@@ -1,4 +1,4 @@
-{% set version = "4.0.2" %}
+{% set version = "4.0.4" %}
 {% set name = "givaro" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/linbox-team/givaro/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dc70cb80dc231184f0ce04ad82d0a9127906e84b5a157d5e527867815c6604bd
+  sha256: 65257ee07183b8cbd50add2e36b1bc757f1459e665ae02cd662777d4001ba1dd
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
