@@ -8,7 +8,21 @@ export CXXFLAGS="-fPIC -O2 $CXXFLAGS"
 
 chmod +x configure
 
-./configure --prefix=$PREFIX --libdir=$PREFIX/lib --disable-simd
+# Enable only SSE/SSE2 as these are supported on all 64bit CPUs
+# https://unix.stackexchange.com/a/249384
+./configure \
+    --prefix=$PREFIX \
+    --libdir=$PREFIX/lib \
+    --enable-sse \
+    --enable-sse2 \
+    --disable-sse3 \
+    --disable-ssse3 \
+    --disable-sse41 \
+    --disable-sse42 \
+    --disable-avx \
+    --disable-fma \
+    --disable-fma4
+
 
 make
 make check
