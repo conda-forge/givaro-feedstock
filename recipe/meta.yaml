@@ -11,16 +11,19 @@ source:
   sha256: 65257ee07183b8cbd50add2e36b1bc757f1459e665ae02cd662777d4001ba1dd
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
+  run_exports:
+    - {{ pin_subpackage('givaro', max_pin='x.x.x') }}
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('cxx') }}
     - libtool
-    - gmp >=5.0.1,<7
+  host:
+    - gmp
   run:
-    - gmp >=5.0.1,<7
+    - gmp
 
 test:
   commands:
