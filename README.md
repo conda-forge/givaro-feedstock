@@ -14,14 +14,16 @@ Summary: Givaro - C++ library for arithmetic and algebraic computations
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/givaro-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/givaro-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/givaro-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/givaro-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/givaro-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/givaro-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/givaro-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/givaro-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/givaro/badges/version.svg)](https://anaconda.org/conda-forge/givaro)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/givaro/badges/downloads.svg)](https://anaconda.org/conda-forge/givaro)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-givaro-green.svg)](https://anaconda.org/conda-forge/givaro) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/givaro.svg)](https://anaconda.org/conda-forge/givaro) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/givaro.svg)](https://anaconda.org/conda-forge/givaro) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/givaro.svg)](https://anaconda.org/conda-forge/givaro) |
 
 Installing givaro
 =================
