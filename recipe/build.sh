@@ -20,6 +20,7 @@ chmod +x configure
     --disable-sse41 \
     --disable-sse42 \
     --disable-avx \
+    --disable-avx2 \
     --disable-fma \
     --disable-fma4
 
