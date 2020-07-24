@@ -20,10 +20,12 @@ chmod +x configure
     --disable-sse41 \
     --disable-sse42 \
     --disable-avx \
+    --disable-avx2 \
     --disable-fma \
-    --disable-fma4
+    --disable-fma4 \
+    --disable-static
 
-
-make
-make check
+make -j${CPU_COUNT}
+# Neet to do a make install first for the test suite
 make install
+make check || (cat tests/test-suite.log; false)
