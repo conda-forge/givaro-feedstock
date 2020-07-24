@@ -26,5 +26,6 @@ chmod +x configure
     --disable-static
 
 make -j${CPU_COUNT}
-make check || (cat tests/test-suite.log; false)
+# Neet to do a make install first for the test suite
 make install
+make check || (cat tests/test-suite.log; false)
