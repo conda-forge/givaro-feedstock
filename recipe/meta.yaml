@@ -6,7 +6,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/linbox-team/givaro/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: 628049899386e91da245aee6cd446350fbca87e94863bc0d815066c08150487f
 
@@ -29,14 +28,13 @@ requirements:
 test:
   commands:
     - test -f ${PREFIX}/include/givaro/givaromm.h
-    - test -f ${PREFIX}/lib/lib{{ name }}.a
     - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]
     - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]
 
 about:
   home: http://givaro.forge.imag.fr
-  license: GPLv2+
-  license_file: {{ SRC_DIR }}/COPYING
+  license: GPL-2.0-or-later
+  license_file: COPYING
   summary: Givaro - C++ library for arithmetic and algebraic computations
   dev_url: https://github.com/linbox-team/givaro
   doc_url: http://givaro.forge.imag.fr/givaro-html
