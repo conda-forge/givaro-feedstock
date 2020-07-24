@@ -22,9 +22,9 @@ chmod +x configure
     --disable-avx \
     --disable-avx2 \
     --disable-fma \
-    --disable-fma4
+    --disable-fma4 \
+    --disable-static
 
-
-make
+make -j${CPU_COUNT}
 make check
 make install
