@@ -1,4 +1,6 @@
 #!/bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 
 export CPPFLAGS="-I$PREFIX/include $CPPFLAGS"
 export LDFLAGS="-L$PREFIX/lib $LDFLAGS"
@@ -28,4 +30,6 @@ chmod +x configure
 make -j${CPU_COUNT}
 # Neet to do a make install first for the test suite
 make install
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 make check || (cat tests/test-suite.log; false)
+fi

@@ -17,6 +17,7 @@ build:
 
 requirements:
   build:
+    - libtool  # [unix]
     - {{ compiler('cxx') }}
     - libtool
     - make
