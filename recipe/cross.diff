@@ -18,3 +18,17 @@
  
  # Veltkamp Split in modular-extended.inl requires to use the SSE floating point multiplier and not the fp87
 
+--- macros/gmp-check.m4 2021-03-20 18:35:31.930683291 +0000
++++ macros/gmp-check.m4 2021-03-20 18:35:07.682412775 +0000
+@@ -115,9 +115,7 @@
+                ],
+                [ AC_MSG_RESULT(no)
+                  AC_MSG_ERROR(your GMP is too old. GMP release >= $min_gmp_release needed)
+-                 exit 1],
+-               [ AC_MSG_RESULT(yes)
+-               ],
++                 exit 1]
+        )
+        AC_LANG_POP([C++])
+ 
+
