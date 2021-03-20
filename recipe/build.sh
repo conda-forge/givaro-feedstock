@@ -2,11 +2,10 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 
-export CPPFLAGS="-I$PREFIX/include $CPPFLAGS"
-export LDFLAGS="-L$PREFIX/lib $LDFLAGS"
-export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
-export CFLAGS="-fPIC -O2 $CFLAGS"
-export CXXFLAGS="-fPIC -O2 $CXXFLAGS"
+export CFLAGS="-fPIC $CFLAGS"
+export CXXFLAGS="-fPIC $CXXFLAGS"
+
+autoreconf -vfi
 
 chmod +x configure
 
@@ -27,7 +26,7 @@ chmod +x configure
     --disable-fma4 \
     --disable-static
 
-make -j${CPU_COUNT}
+make -j${CPU_COUNT} V=1
 # Neet to do a make install first for the test suite
 make install
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then

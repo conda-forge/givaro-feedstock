@@ -1,0 +1,20 @@
+--- configure.ac        2021-03-20 18:21:44.105930027 +0000
++++ configure.ac        2021-03-20 18:22:15.162257892 +0000
+@@ -45,8 +45,6 @@
+ #set CXX
+ AC_PROG_CXX
+ 
+-AC_COMPILER_NAME
+-
+ # We need a C++11 compiler now - AB 2014-12-12
+ # clang-3.8 does not support __float128 without explicitly passing it -std=c++11
+ if test "x${CCNAM}" = "xclang38" ; then
+@@ -123,7 +121,6 @@
+ echo "-----------------------------------------------"
+ 
+ # Checks which SIMD optimization flags to use and set SIMD_CFLAGS accordingly
+-INSTR_SET
+ AC_SUBST(SIMD_FLAGS)
+ 
+ # Veltkamp Split in modular-extended.inl requires to use the SSE floating point multiplier and not the fp87
+
