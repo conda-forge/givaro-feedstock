@@ -35,12 +35,12 @@ test:
     - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]
 
 about:
-  home: http://givaro.forge.imag.fr
+  home: https://casys.gricad-pages.univ-grenoble-alpes.fr/givaro/
   license: GPL-2.0-or-later
   license_file: COPYING
   summary: Givaro - C++ library for arithmetic and algebraic computations
   dev_url: https://github.com/linbox-team/givaro
-  doc_url: http://givaro.forge.imag.fr/givaro-html
+  doc_url: https://casys.gricad-pages.univ-grenoble-alpes.fr/givaro/givaro-html/
 
 extra:
   recipe-maintainers:
