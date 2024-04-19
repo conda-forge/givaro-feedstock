@@ -14,6 +14,7 @@ chmod +x configure
 ./configure \
     --prefix=$PREFIX \
     --libdir=$PREFIX/lib \
+    --disable-doc \
     --enable-sse \
     --enable-sse2 \
     --disable-sse3 \
