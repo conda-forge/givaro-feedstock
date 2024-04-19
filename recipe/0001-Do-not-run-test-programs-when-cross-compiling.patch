@@ -1,14 +1,14 @@
-From bd43177189c0e87a87deae2031d78b919d9752b0 Mon Sep 17 00:00:00 2001
+From 83211960bf7666197bf361b2d30a9327502e4988 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
 Date: Fri, 19 Apr 2024 12:33:52 +0300
 Subject: [PATCH] Do not run test programs when cross compiling
 
 ---
- configure.ac | 8 --------
- 1 file changed, 8 deletions(-)
+ configure.ac | 11 -----------
+ 1 file changed, 11 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index d42fbea..fda65b2 100644
+index d42fbea..6d9f675 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -44,14 +44,6 @@ AC_CHECK_HEADERS([float.h limits.h stddef.h stdlib.h string.h sys/time.h stdint.
@@ -26,6 +26,16 @@ index d42fbea..fda65b2 100644
  REQUIRED_FLAGS="${CXX11FLAGS}"
  # Add the c++11 flags for the configure compilations as clang needs it to work properly with a glibc++ compiled with gcc
  CXXFLAGS="${CXX11FLAGS} ${CXXFLAGS}"
+@@ -60,9 +52,6 @@ AS_ECHO([---------------------------------------])
+ 
+ AC_INLINE # DON'T TOUCH
+ 
+-# Set OPTIM_FLAGS, DEBUG_FLAGS depending on compiler and command line arguments
+-SET_FLAGS
+-
+ # Append -march=native or -mcpu=native (if recognized by the compiler) to
+ # OPTIM_FLAGS if not present in CXXFLAGS and not cross-compiling and
+ # --without-archnative is not set
 -- 
 2.44.0
 
