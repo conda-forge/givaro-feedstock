@@ -1,0 +1,31 @@
+From bd43177189c0e87a87deae2031d78b919d9752b0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Fri, 19 Apr 2024 12:33:52 +0300
+Subject: [PATCH] Do not run test programs when cross compiling
+
+---
+ configure.ac | 8 --------
+ 1 file changed, 8 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index d42fbea..fda65b2 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -44,14 +44,6 @@ AC_CHECK_HEADERS([float.h limits.h stddef.h stdlib.h string.h sys/time.h stdint.
+ AS_BOX([       START GIVARO CONFIG       ])
+ ###########################################
+ 
+-AC_COMPILER_NAME
+-
+-# We need a C++11 compiler now - AB 2014-12-12
+-# clang-3.8 does not support __float128 without explicitly passing it -std=c++11
+-AS_IF([test "x${CCNAM}" = "xclang38"],
+-      [AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])],
+-      [AX_CXX_COMPILE_STDCXX_11([ext],[mandatory])]
+-      )
+ REQUIRED_FLAGS="${CXX11FLAGS}"
+ # Add the c++11 flags for the configure compilations as clang needs it to work properly with a glibc++ compiled with gcc
+ CXXFLAGS="${CXX11FLAGS} ${CXXFLAGS}"
+-- 
+2.44.0
+
