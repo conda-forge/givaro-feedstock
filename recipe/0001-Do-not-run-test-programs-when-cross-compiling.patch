@@ -1,4 +1,4 @@
-From ef98334b4b1586a2bcb0cd9d48b2d12299be37ad Mon Sep 17 00:00:00 2001
+From d8f5e322b5d351e5bb5b9f392e528ce6bd36f993 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
 Date: Fri, 19 Apr 2024 12:33:52 +0300
 Subject: [PATCH] Do not run test programs when cross compiling
@@ -8,7 +8,7 @@ Subject: [PATCH] Do not run test programs when cross compiling
  1 file changed, 1 insertion(+), 12 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index d42fbea..21a855b 100644
+index d42fbea..58d809a 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -44,14 +44,6 @@ AC_CHECK_HEADERS([float.h limits.h stddef.h stdlib.h string.h sys/time.h stdint.
@@ -42,7 +42,7 @@ index d42fbea..21a855b 100644
  # Look for GMP and add flags if necessary
 -GIV_CHECK_GMP(40000)
  REQUIRED_FLAGS+=" ${GMP_CFLAGS}"
-+GMP_LIBS="-lgmp"
++GMP_LIBS="-lgmpxx -lgmp"
  
  GIV_DOC
  
