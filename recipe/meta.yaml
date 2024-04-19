@@ -10,6 +10,7 @@ source:
   sha256: 865e228812feca971dfb6e776a7bc7ac959cf63ebd52b4f05492730a46e1f189
   patches:
     - 0001-Do-not-run-test-programs-when-cross-compiling.patch
+    - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
 
 build:
   number: 0
