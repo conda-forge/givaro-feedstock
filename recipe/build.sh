@@ -14,6 +14,7 @@ chmod +x configure
 ./configure \
     --prefix=$PREFIX \
     --libdir=$PREFIX/lib \
+    --disable-doc \
     --enable-sse \
     --enable-sse2 \
     --disable-sse3 \
@@ -24,7 +25,7 @@ chmod +x configure
     --disable-avx2 \
     --disable-fma \
     --disable-fma4 \
-    --disable-static
+    --disable-static || (cat config.log; false)
 
 make -j${CPU_COUNT} V=1
 # Neet to do a make install first for the test suite
