@@ -27,8 +27,6 @@ requirements:
     - make
   host:
     - gmp
-  run:
-    - gmp
 
 test:
   commands:
