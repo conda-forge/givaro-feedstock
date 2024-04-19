@@ -3,7 +3,7 @@ About givaro-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/givaro-feedstock/blob/main/LICENSE.txt)
 
-Home: http://givaro.forge.imag.fr
+Home: https://casys.gricad-pages.univ-grenoble-alpes.fr/givaro/
 
 Package license: GPL-2.0-or-later
 
@@ -11,7 +11,7 @@ Summary: Givaro - C++ library for arithmetic and algebraic computations
 
 Development: https://github.com/linbox-team/givaro
 
-Documentation: http://givaro.forge.imag.fr/givaro-html
+Documentation: https://casys.gricad-pages.univ-grenoble-alpes.fr/givaro/givaro-html/
 
 Current build status
 ====================
