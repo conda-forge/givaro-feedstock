@@ -1,4 +1,4 @@
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 {% set name = "givaro" %}
 
 package:
@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/linbox-team/givaro/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 865e228812feca971dfb6e776a7bc7ac959cf63ebd52b4f05492730a46e1f189
+  url: https://github.com/linbox-team/givaro/archive/v{{ version }}.tar.gz
+  sha256: 6aae4b74c2772b6f4aa4e55d1d90f79214635aa664e3b121dde2e0b5192f310b
   patches:
     - 0001-Do-not-run-test-programs-when-cross-compiling.patch
     - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
@@ -24,12 +24,12 @@ requirements:
     - autoconf  # [unix]
     - automake  # [unix]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - libtool
     - make
   host:
     - gmp
   run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
