@@ -13,7 +13,7 @@ source:
     - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('givaro', max_pin='x.x.x') }}
