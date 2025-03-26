@@ -11,6 +11,7 @@ source:
   patches:
     - 0001-Do-not-run-test-programs-when-cross-compiling.patch
     - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
+    - cstdint.diff
 
 build:
   number: 1
