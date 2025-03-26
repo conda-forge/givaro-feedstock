@@ -42,7 +42,7 @@ index a94286a..ce6c274 100644
  # Look for GMP and add flags if necessary
 -GIV_CHECK_GMP(40000)
  REQUIRED_FLAGS="${REQUIRED_FLAGS} ${GMP_CFLAGS}"
-++GMP_LIBS="-lgmpxx -lgmp"
++GMP_LIBS="-lgmpxx -lgmp"
  
  GIV_DOC
  
