@@ -20,16 +20,14 @@ build:
 
 requirements:
   build:
-    - libtool   # [unix]
-    - autoconf  # [unix]
-    - automake  # [unix]
+    - {{ stdlib('cxx') }}
     - {{ compiler('cxx') }}
     - libtool
+    - autoconf  # [unix]
+    - automake  # [unix]
     - make
   host:
     - gmp
-  run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
