@@ -20,7 +20,7 @@ build:
 
 requirements:
   build:
-    - {{ stdlib('cxx') }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - libtool
     - autoconf  # [unix]
