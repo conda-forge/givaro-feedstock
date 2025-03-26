@@ -10,21 +10,22 @@ source:
   sha256: 6aae4b74c2772b6f4aa4e55d1d90f79214635aa664e3b121dde2e0b5192f310b
   patches:
     - 0001-Do-not-run-test-programs-when-cross-compiling.patch
+    - cstdint.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('givaro', max_pin='x.x.x') }}
 
 requirements:
   build:
-    - libtool   # [unix]
-    - autoconf  # [unix]
-    - automake  # [unix]
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - libtool
+    - autoconf  # [unix]
+    - automake  # [unix]
     - make
   host:
     - gmp
