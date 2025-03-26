@@ -11,25 +11,24 @@ source:
   patches:
     - 0001-Do-not-run-test-programs-when-cross-compiling.patch
     - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
+    - cstdint.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('givaro', max_pin='x.x.x') }}
 
 requirements:
   build:
-    - libtool   # [unix]
-    - autoconf  # [unix]
-    - automake  # [unix]
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - libtool
+    - autoconf  # [unix]
+    - automake  # [unix]
     - make
   host:
     - gmp
-  run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
