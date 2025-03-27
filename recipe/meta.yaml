@@ -14,7 +14,7 @@ source:
     - cstdint.diff
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('givaro', max_pin='x.x.x') }}

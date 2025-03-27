@@ -33,3 +33,9 @@ make install
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
   make check || (cat tests/test-suite.log; false)
 fi
+
+if [[ "$target_platform" == osx-64 ]]; then
+  sed -i.bak "s/Cflags:/Cflags: -fclang-abi-compat=14/g" $PREFIX/lib/pkgconfig/givaro.pc
+  rm $PREFIX/lib/pkgconfig/givaro.pc.bak
+  cat $PREFIX/lib/pkgconfig/givaro.pc
+fi
