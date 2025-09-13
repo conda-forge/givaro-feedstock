@@ -12,9 +12,11 @@ source:
     - 0001-Do-not-run-test-programs-when-cross-compiling.patch
     - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
     - cstdint.diff
+    - cast.patch
+    - highest-bit.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('givaro', max_pin='x.x.x') }}
