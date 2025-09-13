@@ -13,6 +13,7 @@ source:
     - 0002-remove-declaration-of-std-bool_constant-not-needed.patch
     - cstdint.diff
     - cast.patch
+    - highest-bit.patch
 
 build:
   number: 3
